@@ -1,5 +1,9 @@
 QA_input = [
     {
+        "question": "Default. No option",
+        "context": "I have not been developed to answer this question, pending"
+    },
+    {
         "question": "why is everyone so worried about me?",
         "context": "Everyone wants you to become better and they are all supporting you in every thing you are doing"
     },
@@ -27,5 +31,10 @@ QA_input = [
     {
         "question": "hello",
         "context": "Hello there?, how may i assist you"
+    },
+    {
+        "question": "how are you doing?",
+        "context": "Am fine, how are you doing today?"
     }
+    
 ]
