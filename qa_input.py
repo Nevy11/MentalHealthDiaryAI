@@ -26,7 +26,7 @@ QA_input = [
     },
     {
         "question": "what is your name?",
-        "context": "My name is Stephen Mainda Mongare"
+        "context": "My name is Mental AI"
     },
     {
         "question": "hello",
@@ -37,5 +37,8 @@ QA_input = [
         "context": "Am fine, how are you doing today?"
     },
     
-    
+    {
+        "question": "how are you?",
+        "context": "Am fine, how are you doing today?"
+    },
 ]
