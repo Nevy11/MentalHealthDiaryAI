@@ -1,5 +1,6 @@
 from transformers import pipeline
-from qa_input import QA_input 
+from convert import QA_input
+from qa_input import QA_input as QAI
 import random
 
 model_name = 'deepset/roberta-base-squad2'
@@ -36,11 +37,32 @@ while True:
                 answers_found.append(answer['answer'])
 
             count +=1
+
+    if not found:
+         for index in QAI:
+            if index['Context'] == question_asked:
+                answer = qa(question_asked, QAI[count]['Response'])
+                # print(answer['answer'])
+                found=True
+                number_of_found_answers += 1
+                answers_found.append(answer['answer'])
+            count +=1
+            if not found:
+                count = 0
+                for index in QAI:
+                    if index['Context'] == question_asked + "?":
+                        answer = qa(question_asked, QAI[count]['Response'])
+                        # print(answer['answer'])
+                        found=True
+                        number_of_found_answers += 1
+                        answers_found.append(answer['answer'])
+
+                    count +=1
             
-        if not found:
+    if not found:
             answer_trial = qa(QA_input[0]['Context'], QA_input[0]['Response'])
             print(answer_trial['answer'])
-        if found:
+    if found:
             index = random.randrange(0, number_of_found_answers+1)
             print("answers_found: ", answers_found)
             print("Selecting: ", answers_found[index])

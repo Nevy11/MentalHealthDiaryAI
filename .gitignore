@@ -1,3 +1,5 @@
 *.ipynb
 plan.txt
 test.py
+convert.sh
+names.json
