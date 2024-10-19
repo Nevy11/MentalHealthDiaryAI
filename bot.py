@@ -49,32 +49,33 @@ while True:
 
             count +=1
 
-    if not found:
-         count = 0
-         for index in QAI:
-            print(index)
-            if index['Context'] == question_asked.lower():
-                answer = qa(question_asked.lower(), QAI[count]['Response'])
-                print(answer['answer'])
-                found=True
-                number_of_found_answers += 1
-                answers_found.append(answer['answer'])
-            count +=1
-    if not found:
-        count = 0
-        for index in QAI:
-            if index['Context'] == question_asked + "?":
-                answer = qa(question_asked + "?", QAI[count]['Response'])
-                print(answer['answer'])
-                found=True
-                number_of_found_answers += 1
-                answers_found.append(answer['answer'])
+        if not found:
+            count = 0
+            for index in QAI:
+                print(index)
+                if index['Context'] == question_asked.lower():
+                    answer = qa(question_asked.lower(), QAI[count]['Response'])
+                    print(answer['answer'])
+                    found=True
+                    number_of_found_answers += 1
+                    answers_found.append(answer['answer'])
+                    break
+                count +=1
+            if not found:
+                count = 0
+                for index in QAI:
+                    if index['Context'] == question_asked + "?":
+                        answer = qa(question_asked + "?", QAI[count]['Response'])
+                        print(answer['answer'])
+                        found=True
+                        number_of_found_answers += 1
+                        answers_found.append(answer['answer'])
 
-            count +=1
-            
-    if not found:
-            answer_trial = qa(QA_input[0]['Context'], QA_input[0]['Response'])
-            print(answer_trial['answer'])
+                    count +=1
+                    
+                if not found:
+                        answer_trial = qa(QA_input[0]['Context'], QA_input[0]['Response'])
+                        print(answer_trial['answer'])
     if found:
             print("number_of_found_answers", number_of_found_answers)
             index = random.randrange(0, number_of_found_answers)

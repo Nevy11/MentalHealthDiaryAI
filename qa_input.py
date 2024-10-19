@@ -18,11 +18,11 @@ QA_input = [
   },
   {
     "Context": "why is conversation important?",
-    "con": "The Option to convert models between FARM and transformers gives freedom to the user and let people easily switch between frameworks"
+    "Response": "The Option to convert models between FARM and transformers gives freedom to the user and let people easily switch between frameworks"
   },
   {
     "Context": "why me?",
-    "": "Challenges you are experiencing right now are preparing you for the future. Look at all the bright things that have happened in your life, how was it? You've come this far, don't give up, instead, appreciate your self. All the achievements that you've made."
+    "Response": "Challenges you are experiencing right now are preparing you for the future. Look at all the bright things that have happened in your life, how was it? You've come this far, don't give up, instead, appreciate your self. All the achievements that you've made."
   },
   {
     "Context": "what is your name?",
